@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    background-color: bisque;
+    /* background-color: plum; */
+}
+
+.errorMsg{
+    color: red;
+    position: relative;
+    top: -20px;
+    left: 50px;
+}
+
+.error{
+    color: red;
+    position: relative;
+    top: -20px;
+    right: 30px;
+}
+
+.notification{
+    position: fixed;
+    z-index: 10;
+    /* right: 8%; */
+    top: 190px;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: rgb(255, 255, 255);
+    font-style: italic;
+    text-decoration: underline;
+    box-shadow: 0 5px 10px rgb(204, 204, 204);
+    background-color: rgba(238, 74, 74, 0.699);
+   }
+   .error-message {
+    background-color: rgba(238, 74, 74, 0.699);
+   }
+
+   /* section{
+    position: relative;
+   } */
+   

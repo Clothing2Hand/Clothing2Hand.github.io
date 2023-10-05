@@ -1,0 +1,38 @@
+.profile-card {
+    display: inline-block;
+    padding: 40px 60px;
+    margin: 30px 30px;
+    border-radius: 20px;
+    background-color: rgba(191, 138, 119, 0.319);
+    text-align: left;
+}
+
+p {
+    display: block;
+    margin: 20px 16px;
+}
+
+button {
+    background-color: #bac04a;
+    color: black;
+    font-weight: bold;
+    border: none;
+    padding: 14px;
+    outline: none;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-left: 10px;
+    border-radius: 12px;
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    -webkit-transition: 300ms ease-in-out;
+    -o-transition: 200ms ease-in-out;
+    transition: 200ms ease-in-out;
+}
+
+button:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}

@@ -1,0 +1,23 @@
+<div class="profile-card">
+    <h1>Your profile card</h1>
+    <p>First Name : {{user!.firstName}}</p>
+    <p>Last Name : {{user!.lastName}}</p>
+    <p>Email : {{user!.email}}</p>
+    <p>Username : {{user!.username}}</p>
+
+    <div>
+        <p>Bought clothing : </p>
+    </div>
+
+    <ng-container *ngIf="user!.boughtClothing.length == 0 else bought">
+        <p>Nothing bought.</p>
+    </ng-container>
+
+    <ng-template #bought>
+        <div *ngFor="let clothing of user!.boughtClothing">
+            <p> {{clothing.type}} : {{clothing.price}} $</p>
+        </div>
+    </ng-template>
+    
+    <button routerLink="/auth/myProfile/edit">Edit</button>
+</div>

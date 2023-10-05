@@ -1,0 +1,31 @@
+<form [formGroup]="profileForm" (ngSubmit)="editHandler()"> 
+    <p class="notification error-message">{{apiError?.message}}</p>
+    <h1>Edit your profile: </h1>
+    <label>Username: <input formControlName="username" type="text" name="username"></label>
+    <ng-container *ngIf="profileForm.get('username')?.touched">
+        <p class="errorMsg"  *ngIf="profileForm.get('username')?.errors?.['appUsernameError']" >Username must contain at least one digit!</p>
+        <p class="errorMsg"  *ngIf="profileForm.get('username')?.errors?.['appUsernameError']" >Username must be 6 characters long!</p>
+        <p class="errorMsg" *ngIf="profileForm.get('username')?.errors?.['required']">Username is required</p>
+    </ng-container>
+
+    <label>First Name: <input formControlName="firstName"  type="text" name="firstName"></label>
+    <ng-container *ngIf="profileForm.get('firstName')?.touched">
+        <p class="errorMsg" *ngIf="profileForm.get('firstName')?.errors?.['required']">First name is required</p>
+        <p class="errorMsg" *ngIf="profileForm.get('firstName')?.errors?.['minlength']?.requiredLength">Minimal length is {{profileForm.get('firstName')?.errors?.['minlength'].requiredLength}} digits</p>  
+        
+    </ng-container >
+
+    <label>Last Name: <input formControlName="lastName" type="text" name="lastName"></label>
+    <ng-container *ngIf="profileForm.get('lastName')?.touched">
+        <p class="errorMsg" *ngIf="profileForm.get('lastName')?.errors?.['required']">Last name is required</p>
+        <p class="errorMsg" *ngIf="profileForm.get('lastName')?.errors?.['minlength']?.requiredLength">Minimal length is {{profileForm.get('lastName')?.errors?.['minlength'].requiredLength}} digits</p>  
+    </ng-container>
+
+    <label>Email: <input formControlName="email" type="text" name="email"></label>
+    <ng-container *ngIf="profileForm.get('email')?.touched">
+        <p class="errorMsg" *ngIf="profileForm.get('email')?.errors?.['required']">Email is required</p>
+        <p class="errorMsg" *ngIf="profileForm.get('email')?.errors?.['email']">Email is invalid</p>
+    </ng-container>
+
+    <button>Save</button>
+</form>

@@ -1,0 +1,46 @@
+<form [formGroup]="registerForm" (ngSubmit)="registerHandler()"> 
+    <p class="notification error-message">{{apiError?.message}}</p>
+    <h1>Register: </h1>
+    <label>Username: <input formControlName="username" type="text" name="username"></label>
+    <ng-container *ngIf="registerForm.get('username')?.touched">
+        <p class="errorMsg"  *ngIf="registerForm.get('username')?.errors?.['appUsernameError']" >Username must contain at least one digit!</p>
+        <p class="errorMsg"  *ngIf="registerForm.get('username')?.errors?.['appUsernameError']" >Username must be 6 characters long!</p>
+        <p class="errorMsg" *ngIf="registerForm.get('username')?.errors?.['required']">Username is required</p>
+    </ng-container>
+
+    <label>First Name: <input formControlName="firstName"  type="text" name="firstName"></label>
+    <ng-container *ngIf="registerForm.get('firstName')?.touched">
+        <p class="errorMsg" *ngIf="registerForm.get('firstName')?.errors?.['required']">First name is required</p>
+        <p class="errorMsg" *ngIf="registerForm.get('firstName')?.errors?.['minlength']?.requiredLength">Minimal length is {{registerForm.get('firstName')?.errors?.['minlength'].requiredLength}} digits</p>  
+        
+    </ng-container >
+
+    <label>Last Name: <input formControlName="lastName" type="text" name="lastName"></label>
+    <ng-container *ngIf="registerForm.get('lastName')?.touched">
+        <p class="errorMsg" *ngIf="registerForm.get('lastName')?.errors?.['required']">Last name is required</p>
+        <p class="errorMsg" *ngIf="registerForm.get('lastName')?.errors?.['minlength']?.requiredLength">Minimal length is {{registerForm.get('lastName')?.errors?.['minlength'].requiredLength}} digits</p>  
+    </ng-container>
+
+    <label>Email: <input formControlName="email" type="text" name="email"></label>
+    <ng-container *ngIf="registerForm.get('email')?.touched">
+        <p class="errorMsg" *ngIf="registerForm.get('email')?.errors?.['required']">Email is required</p>
+        <p class="errorMsg" *ngIf="registerForm.get('email')?.errors?.['email']">Email is invalid</p>
+    </ng-container>
+
+    <ng-container formGroupName="pass">
+
+        <label>Password: <input formControlName="password" type="password" name="password"></label>
+        <ng-container *ngIf="registerForm.get('pass')?.get('password')?.touched">
+            <p class="errorMsg" *ngIf="registerForm.get('pass')?.get('password')?.errors?.['required']">Password is required</p>
+            <p class="errorMsg" *ngIf="registerForm.get('pass')?.get('password')?.errors?.['minlength']?.requiredLength">Minimal length is {{registerForm.get('pass')?.get('password')?.errors?.['minlength'].requiredLength}} digits</p>  
+        </ng-container>
+
+        <label>Repeat Password: <input formControlName="rePass" type="password" name="rePass"></label>
+        <ng-container *ngIf="registerForm.get('pass')?.get('rePass')?.touched">
+            <p class="errorMsg" *ngIf="registerForm.get('pass')?.get('rePass')?.errors?.['required']">Confirm password!</p>
+            <p class="errorMsg" *ngIf="registerForm.get('pass')?.errors?.['sameValueGroupValidator']">Passwords should match!</p>
+        </ng-container>
+
+       <button [disabled]="registerForm.invalid">Submit</button>
+    </ng-container>
+</form>

@@ -1,0 +1,35 @@
+<div class="main_card" *ngIf="clothing">
+    <div class="card_left">
+        <div class="card_datails">
+            <h1 class="card-type">Product: {{clothing!.type}}</h1>
+            <div class="card_character">
+                <p class="card-size">Size: {{clothing.sizeClothing}}</p>
+                <p class="card-color">Color: {{clothing.color}}</p>
+                <p class="card-brand">Brand: {{clothing.brand}}</p>
+                <p class="card-price">Price: {{clothing.price}} $</p>
+                <p class="card-description">Description: {{clothing.description}}</p>
+            </div>
+
+
+            <div class="social-btn" *ngIf="hasUser else logIn" >
+                <ng-container *ngIf="isOwner else buy">
+                    <a [routerLink]="['/clothes', clothing._id, 'edit']" class="edit-btn">Edit</a>
+                    <button (click)="deleteHandler()" class="del-btn">Delete</button>
+                </ng-container>
+ 
+                <ng-template #buy>
+                    <button  (click)="buyHandler()" class="buy-btn">Buy</button>
+                </ng-template>
+            </div>
+
+            <ng-template #logIn>
+                <label class="logIn">If you want to buy this, please  <a routerLink="/auth/login">Login</a></label>
+            </ng-template>
+
+        </div>
+
+    </div>
+    <div class="card_right">
+        <img src="{{clothing.imageUrl}}" alt="image">
+    </div>
+</div>

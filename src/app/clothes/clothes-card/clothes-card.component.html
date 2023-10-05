@@ -1,0 +1,5 @@
+<img src="{{clothing.imageUrl}}" alt="image">
+<p>Type of clothing: {{clothing.type}}</p>
+<P>Size: {{clothing.sizeClothing}}</P>
+<p>Description : {{clothing.description | shorten}}</p>
+<a [routerLink]="['/clothes', clothing._id]">Details</a>

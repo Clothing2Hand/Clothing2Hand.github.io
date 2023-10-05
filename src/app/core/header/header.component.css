@@ -1,0 +1,39 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    background-color: #8ec2d8be;
+    border-radius: 5px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    /* margin-bottom: 5%; */
+}
+
+nav{
+    display: flex;
+    float: left;
+    background-color: rgba(158, 124, 164, 0.515);
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    justify-content: space-between;
+}
+
+nav a{
+    margin: 10%;
+    color: aliceblue;
+    margin: 20px;
+    font-size: larger;
+}
+
+.nav:hover{
+    background-color: grey;
+}
+

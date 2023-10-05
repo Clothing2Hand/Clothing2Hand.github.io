@@ -1,0 +1,13 @@
+<form #loginForm="ngForm" (ngSubmit)="loginHandler(loginForm)">
+    <p class="notification error-message">{{apiError?.message}}</p>
+    <h1>Log in: </h1>
+    <label>Username: <input ngModel required appUsername  #usernameInput="ngModel" type="text" name="username"></label>
+    <ng-container *ngIf="usernameInput.touched">
+        <p class="errorMsg"  *ngIf="usernameInput.errors?.['required']" >Username is required!</p>
+        <p class="errorMsg"  *ngIf="usernameInput.errors?.['appUsernameError']" >Username must contain at least one digit!</p>
+    </ng-container>
+
+    <label>Password: <input ngModel #passwordInput="ngModel" required type="password" name="password"></label>
+    <p class="errorMsg" *ngIf="passwordInput.touched && passwordInput.errors?.['required']">Password is required!</p>
+    <button [disabled]="loginForm.invalid">Submit</button>
+</form>

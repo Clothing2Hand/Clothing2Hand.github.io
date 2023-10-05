@@ -1,0 +1,20 @@
+form {
+    display: inline-block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 20px;
+    background-color: rgba(191, 138, 119, 0.319);
+    width: 25%;
+    text-align: right;
+    padding-right: 10%;
+}
+
+form label {
+    display: block;
+    margin: 25px 16px;
+}
+
+input{
+    display: inline-block;
+    width: 40%;
+}

@@ -1,0 +1,8 @@
+<h1>Catalog </h1>
+<h2>Find the best clothes for you! </h2>
+<div>
+    <p *ngIf="clothes == null">No clothes yet! </p>
+    <div *ngFor="let clothing of clothes" class="card">
+        <app-clothes-card [clothing] = "clothing"></app-clothes-card>
+    </div>
+</div>

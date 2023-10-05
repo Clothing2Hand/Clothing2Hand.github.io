@@ -1,0 +1,21 @@
+<div class="navbar">
+    <nav>
+        <div class="left-container">
+            <a routerLink="/" class="nav">Home</a>
+            <a routerLink="/clothes/catalog" class="nav">Catalog</a>
+
+            <a *ngIf="user" routerLink="/clothes/create" class="nav">Create</a>
+        </div>
+
+        <div class="right-container">
+            <ng-container *ngIf="!user else loggedIn">
+                <a routerLink="auth/login" class="nav">Login</a>
+                <a routerLink="auth/register" class="nav">Register</a>
+            </ng-container>
+            <ng-template #loggedIn>
+                <a routerLink="auth/myProfile">Hello, {{user!.firstName}}</a>
+                <a routerLink="auth/logout" class="nav">Logout</a>
+            </ng-template>
+        </div>
+    </nav>
+</div>
