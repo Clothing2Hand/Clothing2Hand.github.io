@@ -22,6 +22,7 @@ p {
 
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
     padding: 80px 50px;
+    /* padding: 80px 50px; */
     text-align: center;
     text-transform: uppercase;
     text-rendering: optimizeLegibility;

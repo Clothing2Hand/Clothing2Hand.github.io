@@ -3,9 +3,10 @@
         <div class="left-container">
             <a routerLink="/" class="nav">Home</a>
             <a routerLink="/clothes/catalog" class="nav">Catalog</a>
-
+            
             <a *ngIf="user" routerLink="/clothes/create" class="nav">Create</a>
         </div>
+        <p class="title">Clothes2Hand</p>
 
         <div class="right-container">
             <ng-container *ngIf="!user else loggedIn">

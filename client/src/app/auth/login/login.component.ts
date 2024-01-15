@@ -28,8 +28,6 @@ export class LoginComponent implements OnDestroy{
     const { username,  password } = form.value
     this.authService.login( username!, password!).subscribe({
       next : (user) => {
-        //window.location.pathname[returnUrl]
-
         this.store.dispatch(loadUsers())
         this.router.navigate([returnUrl])
       },
