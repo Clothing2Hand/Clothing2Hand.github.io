@@ -2,7 +2,7 @@
 <h3>Angular project for SoftUni Angular course</h3>
 
 <ul>
-	 Technologies used:
+Technologies used:
 	<li>Angular</li>
 	<li>Typescript</li>
 	<li>Redux</li>
