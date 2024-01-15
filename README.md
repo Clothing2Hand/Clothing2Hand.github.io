@@ -1,14 +1,17 @@
 <h1>Clothing2Hand </h1>
 <h3>Angular project for SoftUni Angular course</h3>
 
-<ul>
-Technologies used:
+<div>
+	Technologies used:
+	<ul>
 	<li>Angular</li>
 	<li>Typescript</li>
 	<li>Redux</li>
 	<li>Express.js</li>
 	<li>MongoDB</li>
 </ul>
+</div>
+
 <div> Functionality
 	<ul> - Guest users: 
 		<li>Guest users can see different clothes in the catalog page.</li>
