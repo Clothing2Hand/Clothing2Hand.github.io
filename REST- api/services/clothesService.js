@@ -25,6 +25,7 @@ async function editClothing(clothingId, clothing) {
     editetClothing.description = clothing.description
     editetClothing.contactInfo = clothing.contactInfo
     editetClothing.adress = clothing.adress
+    editetClothing.imageUrl = clothing.imageUrl
 
     return editetClothing.save()
 }

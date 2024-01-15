@@ -2,28 +2,6 @@ const { hasUser, isOwner } = require('../middlewares/guards')
 const preloader = require('../middlewares/preloader')
 const { getAllClothes, createClothing, getClothing, editClothing, deleteClothing, buyClothing } = require('../services/clothesService')
 const parseError = require('../util/parserError')
-const fs = require('fs')
-// const multer = require('multer')
-
-//--------------
-// let upload = multer({
-//     fileFilter:(req, file, cb)=>{
-//      if(
-//          file.mimetype == 'image/jpeg' ||
-//          file.mimetype == 'image/jpg' ||
-//          file.mimetype == 'image/png' ||
-//          file.mimetype == 'image/gif'
- 
-//      ){
-//          cb(null, true)
-//      }
-//      else{
-//          cb(null, false);
-//          cb(new Error('Only jpeg,  jpg , png, and gif Image allow'))
-//      }
-//     }
-//  })
-//-------------
 
 const clothesController = require('express').Router()
 
@@ -65,7 +43,6 @@ clothesController.post('/create', hasUser(), async (req, res) => {
         const clothing = await createClothing(item)
         res.json(clothing)
     } catch (error) {
-        console.log(error)
         const message = parseError(error)
         res.status(400).json({ message })
     }
