@@ -26,4 +26,5 @@
 ⚙️ Application Configurations
  Seeding sample data would happen once you run the application, including Test Accounts:
     User: nikssi1@abv.bg / password: 123
+  <p>To run the client type: ng s</p>
   <p>To run the server go to the server directory and type: node index.js</p>
