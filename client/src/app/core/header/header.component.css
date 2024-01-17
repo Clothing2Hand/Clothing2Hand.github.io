@@ -20,14 +20,14 @@ nav{
 }
 
 
-nav a{
+nav div a{
     margin-top: 2em;
     padding: 5px;
     color: aliceblue;
     font-size: larger;
     text-decoration: none;
 }
-nav a:hover{
+nav div a:hover{
     color: black;
     border-bottom: 1px solid black;
 }
@@ -36,5 +36,10 @@ nav a:hover{
     font-family:'Lemon';
     color:white;
     font-size: 20px;
+    text-decoration: none;
 }
 
+.title:hover{
+    font-size: larger;
+    color: bisque;
+}

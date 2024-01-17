@@ -6,7 +6,7 @@
             
             <a *ngIf="user" routerLink="/clothes/create" class="nav">Create</a>
         </div>
-        <p class="title">Clothes2Hand</p>
+        <a routerLink="/" class="title">Clothes2Hand</a>
 
         <div class="right-container">
             <ng-container *ngIf="!user else loggedIn">
